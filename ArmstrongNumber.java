@@ -1,8 +1,13 @@
 import java.util.Scanner;
 public class ArmstrongNumber {
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-		int n = in.nextInt();
+		for(int i =0;i<1000;i++) {
+			if(isArmstrong(i)) {
+				System.out.print(i+ " ");
+			}
+		}
+	}
+	static boolean isArmstrong(int n) {
 		int original =n;
 		int temp,rem,count = 0,res =0;
 		temp =n;
@@ -17,9 +22,8 @@ public class ArmstrongNumber {
 			temp = temp / 10;
 		}
 		if(res == original) {
-			System.out.println("Armstrong Number");
-		} else {
-			System.out.println("Not an Armstrong Number");
+			return true;
 		}
+		return false;
 		}
-}
+	}
